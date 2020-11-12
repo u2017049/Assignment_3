@@ -9,15 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: codecov/codecov-action@v1     
-      with:        
-        file: ./coverage.xml # optional
-        files: ./coverage1.xml,./coverage2.xml # optional
-        flags: unittests # optional
-        name: codecov-umbrella # optional
-        fail_ci_if_error: true # optional (default = false)
-        verbose: true # optional (default = false)
+    - uses: actions/checkout@v2      
     - run: yarn # Install dependencies
     - run: yarn test --coverage # Run test
     - run: bash <(curl -s https://codecov.io/bash) # Upload to Codecov       
